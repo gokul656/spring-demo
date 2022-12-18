@@ -40,9 +40,13 @@ public class ReflectionApplication implements CommandLineRunner {
                 log.info("FIELD : {}", declaredField.getName());
              }
 
-             Here you should give the class from which you want to retrieve data from
-             For eg: here `country` has data with name as 'Argentina' and 'code' as 432,
-             so I should the `country` variable.
+             While using Field.get( Class ) you should give the class from which you want to retrieve data from
+             For eg:
+             Here `country` has data with name as 'Argentina' and 'code' as 432,
+             so, If I want to get data from a field I should the `country` variable. It'll be like
+
+             Field someField = entityClass.getField(fieldName);
+             Object data = someField.get(EntityClass.class);
 
              If I use any other variable like `new Country()` it'll return null since no value has been initialized here.
              */
